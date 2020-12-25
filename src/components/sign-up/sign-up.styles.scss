@@ -1,0 +1,18 @@
+@import "../../styles/settings.scss";
+
+.sign-up {
+  width: 400px;
+  padding: 0 10px;
+  margin-bottom: $l-size;
+
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,45 @@
+.button {
+  background-color: #000;
+  border: 1px solid #000000;
+  color: #fff;
+  padding: 14px 40px;
+  outline: transparent;
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+
+  &.modal {
+    width: 100%;
+  }
+
+  &.disabled:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: auto;
+  }
+
+  &.signInWithGoogle {
+    background-color: rgb(94, 148, 219);
+    border: none;
+
+    &:hover {
+      background-color: hsl(214, 63%, 56%);
+      color: #fff;
+    }
+  }
+
+  &.inverted {
+    background-color: #fff;
+    border: 1px solid #000;
+    opacity: 0.9;
+    color: #000;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+  }
+}

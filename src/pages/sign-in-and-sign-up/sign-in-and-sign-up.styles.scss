@@ -1,0 +1,15 @@
+@import "../../styles/settings.scss";
+
+.sign-in-and-sign-up {
+  padding-top: $l-size;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+
+  @media (max-width: 62rem) {
+    padding-top: $s-size;
+    flex-direction: column;
+    align-items: center;
+  }
+}

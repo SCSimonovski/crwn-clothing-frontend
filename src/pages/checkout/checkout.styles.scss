@@ -1,0 +1,55 @@
+@import "../../styles/settings.scss";
+
+.checkout-page {
+  height: 100vh;
+  margin: -9.2rem auto 0;
+
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+
+  @media (max-width: 62em) {
+    margin: -9.2rem auto 0;
+    width: 100%;
+  }
+
+  .items-container {
+    margin-top: 9.2rem;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .empty-cart {
+    display: block;
+    text-align: center;
+    height: 100%;
+    margin: $xl-size;
+    font-size: 1.4rem;
+    color: $light-grey;
+  }
+
+  .checkout-header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid $light-grey;
+    color: $grey;
+
+    .header-block {
+      width: 20%;
+    }
+  }
+
+  .stripe-container {
+    text-align: right;
+
+    .total {
+      margin: $m-size 0;
+      margin-left: auto;
+      font-size: 36px;
+    }
+  }
+}

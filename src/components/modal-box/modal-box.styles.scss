@@ -1,0 +1,23 @@
+@import "../../styles/settings.scss";
+
+.modal-container {
+  display: none;
+}
+
+.button-x-container {
+  width: 100%;
+  text-align: right;
+
+  .button-x {
+    border: none;
+    background: none;
+    outline: transparent;
+    cursor: pointer;
+  }
+}
+
+.modal-text {
+  font-size: $font-size-text;
+  padding: $m-size $m-size $l-size;
+  color: $dark-grey;
+}

@@ -1,0 +1,43 @@
+.collection-item {
+  height: 350px;
+  position: relative;
+  &:hover {
+    opacity: 0.9;
+
+    .collection-item__button {
+      display: flex;
+    }
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .collection-item__button {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+  }
+
+  .item-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #333;
+    font-weight: lighter;
+  }
+
+  @media (max-width: 50em) {
+    min-width: 200px;
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 32em) {
+    width: 300px;
+  }
+}

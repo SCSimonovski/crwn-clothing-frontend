@@ -1,0 +1,31 @@
+.collection-preview__title-link {
+  text-decoration: none;
+  color: #333;
+
+  &:hover {
+    color: #555;
+  }
+  .collection-preview__title {
+  }
+
+  @media (max-width: 32em) {
+    text-align: center;
+  }
+}
+
+.items {
+  display: grid;
+  margin-bottom: 40px;
+  grid-gap: 2em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 50em) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  @media (max-width: 32em) {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}

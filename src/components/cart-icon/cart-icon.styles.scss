@@ -1,0 +1,21 @@
+@import "../../styles/settings.scss";
+
+.cart-icon {
+  margin-top: -6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.shopping-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.item-count {
+  position: absolute;
+  top: 12px;
+  font-size: 0.7rem;
+}

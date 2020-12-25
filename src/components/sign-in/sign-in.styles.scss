@@ -1,0 +1,29 @@
+@import "../../styles/settings.scss";
+
+.sign-in {
+  width: 400px;
+  padding: 0 10px;
+  margin-bottom: $l-size;
+  margin-right: $l-size;
+
+  @media (max-width: 62rem) {
+    margin-right: 0;
+  }
+
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.error-text {
+  text-align: center;
+  color: $error-red;
+  margin-bottom: $m-size;
+}

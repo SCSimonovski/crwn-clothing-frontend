@@ -1,0 +1,22 @@
+.collection-page__title {
+  color: #333;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.collection-page__items {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 50em) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  @media (max-width: 32em) {
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
