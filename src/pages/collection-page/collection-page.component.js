@@ -1,28 +1,16 @@
-import React, { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectCollections } from "../../redux/shop/shop.selectors";
 import CollectionItem from "../../components/collection-item/collection-item.component";
-import ModalBox from "../../components/modal-box/modal-box.component";
 
 import "./collection-page.styles.scss";
 
-const CollectionPage = ({ match, collections }) => {
+const CollectionPage = ({ collections }) => {
   const params = useParams();
   const collection = collections[params.collection];
-  const [open, setOpenModal] = useState(false);
-  const history = useHistory();
-
-  const closeModal = () => {
-    setOpenModal(false);
-  };
-
-  const handleModalButtonClick = () => {
-    setOpenModal(false);
-    history.push("/signIn");
-  };
 
   return (
     <>
@@ -33,24 +21,10 @@ const CollectionPage = ({ match, collections }) => {
 
         <div className="collection-page__items">
           {collection.items.map((item) => {
-            return (
-              <CollectionItem
-                key={item.id}
-                item={item}
-                setOpenModal={setOpenModal}
-              />
-            );
+            return <CollectionItem key={item.id} item={item} />;
           })}
         </div>
       </div>
-
-      <ModalBox
-        text="You must be logged in to buy products"
-        open={open}
-        closeModal={closeModal}
-        handleModalButtonClick={handleModalButtonClick}
-        buttonValue="GO TO SIGN IN PAGE"
-      />
     </>
   );
 };

@@ -16,12 +16,20 @@ import {
   signOutRequest,
 } from "../../api/api.utils";
 
+export function* signIn(userCredentials) {
+  const expiration = new Date().getTime() + 1000 * 60 * 60;
+
+  userCredentials.expiration = new Date(expiration).toISOString();
+
+  yield put(signInSuccess(userCredentials));
+}
+
 //********* SIGN IN WITH EMAIL AND PASSWORD **************//
 
 export function* signInWithEmail({ payload }) {
   try {
     const auth = yield signInWithEmailAndPassword(payload);
-    yield put(signInSuccess(auth));
+    yield signIn(auth);
   } catch (error) {
     yield put(signInFailure(error));
   }
@@ -38,7 +46,7 @@ export function* onSignInWithEmailStart() {
 export function* signInWithGoogle({ payload }) {
   try {
     const auth = yield signInWithGoogleRequest(payload);
-    yield put(signInSuccess(auth));
+    yield signIn(auth);
   } catch (error) {
     yield put(signInFailure(error));
   }
@@ -57,6 +65,7 @@ export function* isUserAuthenticated() {
   if (!user.token) {
     return;
   }
+
   if (new Date(user.expiration).getTime() < new Date().getTime()) {
     yield put(signOutStart());
   }

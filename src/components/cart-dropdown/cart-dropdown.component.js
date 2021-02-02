@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import CustomButton from "../custom-button/custom-button.component";
 import CartItem from "../cart-item/cart-item.component";
-import { toogleHidden } from "../../redux/cart/cart.actions";
+import { toggleHidden } from "../../redux/cart/cart.actions";
 
 import "./cart-dropdown.styles.scss";
 
@@ -11,7 +11,7 @@ const CartDropdown = ({ items, history, dispatch }) => {
   const handleClick = (e) => {
     e.preventDefault();
     history.push("/checkout");
-    dispatch(toogleHidden());
+    dispatch(toggleHidden());
   };
 
   const wrapperRef = useRef(null);
@@ -22,7 +22,7 @@ const CartDropdown = ({ items, history, dispatch }) => {
         (wrapperRef.current && !wrapperRef.current.contains(e.target)) ||
         (wrapperRef.current && !wrapperRef.current.contains(e.target))
       ) {
-        dispatch(toogleHidden());
+        dispatch(toggleHidden());
       }
     };
 

@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   items: [],
   message: null,
   loading: false,
+  addToCartClick: false,
 };
 
 export const cartReducer = (state = INITIAL_STATE, actions) => {
@@ -38,7 +39,7 @@ export const cartReducer = (state = INITIAL_STATE, actions) => {
         items: [],
       };
 
-    case cartActionTypes.TOOGLE_HIDDEN:
+    case cartActionTypes.TOGGLE_HIDDEN:
       return {
         ...state,
         hidden: !state.hidden,
@@ -74,6 +75,12 @@ export const cartReducer = (state = INITIAL_STATE, actions) => {
       return {
         ...state,
         message: null,
+      };
+
+    case cartActionTypes.ADD_TO_CART_CLICK:
+      return {
+        ...state,
+        addToCartClick: !state.addToCartClick,
       };
 
     default:

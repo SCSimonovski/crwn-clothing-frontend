@@ -11,9 +11,6 @@ export const signInWithEmailStart = (emailAndPassword) => ({
 });
 
 export const signInSuccess = (userCredentials) => {
-  userCredentials.expiration = new Date(
-    new Date().getTime() + 1000 * 60 * 60
-  ).toISOString();
   return {
     type: userActionTypes.SIGN_IN_SUCCESS,
     payload: userCredentials,
@@ -31,9 +28,11 @@ export const signOutStart = () => ({
   type: userActionTypes.SIGN_OUT_START,
 });
 
-export const signOutSuccess = () => ({
-  type: userActionTypes.SIGN_OUT_SUCCESS,
-});
+export const signOutSuccess = () => {
+  return {
+    type: userActionTypes.SIGN_OUT_SUCCESS,
+  };
+};
 
 export const signOutFailure = (error) => ({
   type: userActionTypes.SIGN_OUT_FAILURE,

@@ -2,20 +2,19 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CustomButton from "../custom-button/custom-button.component";
 
-import { addCartItem } from "../../redux/cart/cart.actions";
+import { addCartItem, addToCartClick } from "../../redux/cart/cart.actions";
 
 import "./collection-item.style.scss";
 
-const CollectionItem = ({ item, setOpenModal }) => {
+const CollectionItem = ({ item }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => !!state.user.token);
 
   const addItem = () => {
     if (isLoggedIn) {
       dispatch(addCartItem(item));
-    } else {
-      setOpenModal(true);
     }
+    dispatch(addToCartClick());
   };
 
   return (

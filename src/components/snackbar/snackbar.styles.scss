@@ -1,0 +1,47 @@
+@import "../../styles/settings.scss";
+
+.snackbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  transition: opacity 0.5s;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.snackbar-container--open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.snackbar {
+  background-color: $off-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid $border;
+  border-radius: 3px;
+}
+
+.button-x {
+  border: none;
+  background: none;
+  outline: transparent;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: $s-size;
+
+  font-size: 20px;
+}
+
+.snackbar-message {
+  font-size: $font-size-text;
+  padding: $s-size $s-size;
+  color: $dark-grey;
+}

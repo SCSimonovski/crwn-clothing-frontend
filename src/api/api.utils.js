@@ -104,6 +104,7 @@ export const fetchCollections = async () => {
   const promises = await sections.map(async (section) => {
     section.routeName = section.title.toLowerCase();
     const items = await sendRequest(`/sections/${section.title}/items`);
+
     return { ...section, items };
   });
 

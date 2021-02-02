@@ -15,8 +15,8 @@ export const clearItem = (item) => ({
   payload: item,
 });
 
-export const toogleHidden = () => ({
-  type: cartActionTypes.TOOGLE_HIDDEN,
+export const toggleHidden = () => ({
+  type: cartActionTypes.TOGGLE_HIDDEN,
 });
 
 export const clearCartItems = () => ({
@@ -44,4 +44,8 @@ export const clearCheckoutMessage = () => ({
 
 export const setLoading = () => ({
   type: cartActionTypes.SET_LOADING,
+});
+
+export const addToCartClick = () => ({
+  type: cartActionTypes.ADD_TO_CART_CLICK,
 });
