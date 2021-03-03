@@ -24,7 +24,6 @@ const ModalBox = ({
   text,
   open,
   closeModal,
-  handleClick,
   buttonValue,
   handleModalButtonClick,
 }) => {
