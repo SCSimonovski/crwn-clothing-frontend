@@ -20,8 +20,14 @@
     position: absolute;
     bottom: 20px;
     width: 100%;
-    display: none;
+    display: "none";
     justify-content: center;
+
+    @media (max-width: 62rem) {
+      width: 100%;
+      margin-right: 0;
+      display: flex;
+    }
   }
 
   .item-info {
